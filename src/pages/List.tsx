@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { StoreState, NewsType } from "../types";
+import { StoreState } from "../types";
 import styles from "./List.module.scss";
 import { PageHeader } from "../components/PageHeader";
 import { NewsList } from "../components/NewsList";
