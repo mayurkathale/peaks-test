@@ -12,11 +12,11 @@
 }
 
 .success {
-  background: #388E3C;
+  background: #388e3c;
   @include notification();
 }
 
 .error {
-  background: #D32F2F;
+  background: #d32f2f;
   @include notification();
 }

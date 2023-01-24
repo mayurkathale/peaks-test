@@ -29,20 +29,22 @@ export const SortDropDown = () => {
   ];
 
   const sort = useSelector((state: StoreState) => state.news.sort);
-  const selectedOption = options.filter(option => option.value === sort);
+  const selectedOption = options.filter((option) => option.value === sort);
   const dispatch = useDispatch();
 
   const colourStyles = {
-    control: (styles: any) => ({ ...styles, ...controlStyle })
+    control: (styles: any) => ({ ...styles, ...controlStyle }),
   };
 
   const IndicatorSeparator = ({
     innerProps,
-  }: IndicatorSeparatorProps<Option, true>) : JSX.Element => { return (<></>)};
+  }: IndicatorSeparatorProps<Option, true>): JSX.Element => {
+    return <></>;
+  };
 
   const handleOnChange = (newValue: any): void => {
     dispatch(setSort(newValue.value));
-  }
+  };
 
   return (
     <Select

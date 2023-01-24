@@ -10,15 +10,18 @@ export const Search = () => {
   const navigate = useNavigate();
   const animateRef = useRef(null);
 
-  const handleSearchKeyDown = React.useCallback((
-    event: React.KeyboardEvent<HTMLInputElement>
-  ): void => {
-    if (event.key === "Enter") {
-      if (searchref.current?.value.trim().length) {
-        navigate( generatePath(ROUTES.search, {term: searchref.current?.value}))
+  const handleSearchKeyDown = React.useCallback(
+    (event: React.KeyboardEvent<HTMLInputElement>): void => {
+      if (event.key === "Enter") {
+        if (searchref.current?.value.trim().length) {
+          navigate(
+            generatePath(ROUTES.search, { term: searchref.current?.value })
+          );
+        }
       }
-    }
-  }, [searchref, navigate]);
+    },
+    [searchref, navigate]
+  );
 
   const animateClasses = {
     enter: styles.animateEnter,
@@ -26,7 +29,7 @@ export const Search = () => {
     enterDone: styles.animateEnterDone,
     exit: styles.animateExit,
     exitActive: styles.MyClassExit,
-    exitDone: styles.MyClassExitActive
+    exitDone: styles.MyClassExitActive,
   };
 
   return (
@@ -41,28 +44,28 @@ export const Search = () => {
           />
         </div>
       )}
-        <CSSTransition
-          in={searching}
-          timeout={1000}
-          classNames={animateClasses}
-          nodeRef={animateRef}
-          unmountOnExit
-          appear
-        >
-          <div className={styles.searchBox} ref={animateRef}>
-            <input
-              type="text"
-              placeholder="Search all news"
-              ref={searchref}
-              onKeyDown={handleSearchKeyDown}
-            />
-            <img
-              src={searchIcon}
-              alt="search icon"
-              className={styles.searchIcon}
-            />
-          </div>
-        </CSSTransition>
+      <CSSTransition
+        in={searching}
+        timeout={1000}
+        classNames={animateClasses}
+        nodeRef={animateRef}
+        unmountOnExit
+        appear
+      >
+        <div className={styles.searchBox} ref={animateRef}>
+          <input
+            type="text"
+            placeholder="Search all news"
+            ref={searchref}
+            onKeyDown={handleSearchKeyDown}
+          />
+          <img
+            src={searchIcon}
+            alt="search icon"
+            className={styles.searchIcon}
+          />
+        </div>
+      </CSSTransition>
     </div>
   );
 };

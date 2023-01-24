@@ -21,7 +21,7 @@ export const SingleNews = ({ news, image, showContent, heading }: Props) => {
           paddingTop: "56.75%",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "auto"
+          height: "auto",
         }
       : {};
   const contentStyle: React.CSSProperties = image

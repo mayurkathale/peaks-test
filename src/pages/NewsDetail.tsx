@@ -78,20 +78,18 @@ export const NewsDetail = () => {
         className={styles.content}
         dangerouslySetInnerHTML={{ __html: singleNews?.fields.body || "" }}
       ></div>
-      {singleNews?.fields.thumbnail && <div className={styles.image}>
-        <img src={singleNews?.fields.thumbnail} alt="content" />
-        <div className={styles.imgText}>{singleNews?.fields.byline}</div>
-      </div>}
+      {singleNews?.fields.thumbnail && (
+        <div className={styles.image}>
+          <img src={singleNews?.fields.thumbnail} alt="content" />
+          <div className={styles.imgText}>{singleNews?.fields.byline}</div>
+        </div>
+      )}
     </div>
   );
 
   return (
     <div className={styles.notificationBox}>
-      <Notification
-        message={message}
-        type={type}
-        handleClear={handleClear}
-      />
+      <Notification message={message} type={type} handleClear={handleClear} />
       <div className={styles.container}>
         <BookmarkButton
           handleClick={handleOnClickBookmark}

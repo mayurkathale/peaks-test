@@ -19,8 +19,15 @@ export const List = () => {
   params = type ? params + "&ids=" + bookmarked.join() : params;
 
   const { data, loading } = useFetch(API_URL + params);
-  const content = loading ?
-    <LoadingSpinner /> : data.length ? <NewsList news={data} /> : <div><h1>No records founds</h1></div>;
+  const content = loading ? (
+    <LoadingSpinner />
+  ) : data.length ? (
+    <NewsList news={data} />
+  ) : (
+    <div>
+      <h1>No records founds</h1>
+    </div>
+  );
   return (
     <div className={styles.container}>
       {term && <PageHeader title="Search Results" />}

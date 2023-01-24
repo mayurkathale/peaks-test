@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import { NewsReducer } from "./NewsReducer";
 
 const reducer = combineReducers({
-  news: NewsReducer
-})
+  news: NewsReducer,
+});
 
 export default reducer;

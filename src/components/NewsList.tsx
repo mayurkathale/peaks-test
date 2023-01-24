@@ -5,7 +5,7 @@ import { SingleNews } from "./SingleNews";
 type Props = {
   headerText?: string;
   news: NewsType[] | [];
-  showContent?: boolean 
+  showContent?: boolean;
 };
 
 export const NewsList = ({ headerText, news, showContent }: Props) => {
@@ -14,7 +14,12 @@ export const NewsList = ({ headerText, news, showContent }: Props) => {
       {headerText && <div className={styles.header}>{headerText}</div>}
       <div className={styles.list}>
         {news.map((news: NewsType) => (
-          <SingleNews key={news.id} news={news} image={true} showContent={showContent} />
+          <SingleNews
+            key={news.id}
+            news={news}
+            image={true}
+            showContent={showContent}
+          />
         ))}
       </div>
     </div>

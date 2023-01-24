@@ -24,8 +24,8 @@ export const Home = () => {
   );
   const simpleGrid = width < 768;
 
-  let headingNews : NewsType[] | [] = [],
-    headingList : NewsType[] | [] = [];
+  let headingNews: NewsType[] | [] = [],
+    headingList: NewsType[] | [] = [];
   if (simpleGrid) {
     headingNews = [...data];
   } else {

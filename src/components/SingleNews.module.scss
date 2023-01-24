@@ -35,7 +35,7 @@
 
     .bigheading {
       font-size: 24px;
-      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-family: Georgia, "Times New Roman", Times, serif;
       font-weight: 700;
       line-height: 31px;
       letter-spacing: 0px;
@@ -47,7 +47,7 @@
 
     .heading {
       font-size: 18px;
-      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-family: Georgia, "Times New Roman", Times, serif;
       font-weight: 700;
       line-height: 31px;
       letter-spacing: 0px;
@@ -59,7 +59,7 @@
 
     .headingrows {
       font-size: 18px;
-      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-family: Georgia, "Times New Roman", Times, serif;
       font-weight: 700;
       line-height: 31px;
       letter-spacing: 0px;
@@ -68,7 +68,7 @@
       margin-bottom: 10px;
       @include restrictContentLines(2);
     }
-    
+
     .body {
       font-family: $robotoFont;
       font-size: 14px;
@@ -98,4 +98,3 @@
   transform: scale(0.9);
   transition: opacity 1000ms, transform 1000ms;
 }
-
