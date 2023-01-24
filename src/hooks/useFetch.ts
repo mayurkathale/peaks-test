@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { NewsType, StoreState } from "../types";
-import { useSelector } from "react-redux";
+import { NewsType } from "../types";
 
 export default function useFetch(url: string) {
-  const [data, setData] = useState<NewsType[]>([]);
+  const [data, setData] = useState<NewsType []>([]);
   const [error, setError] = useState<any>("");
   const [loading, setLoading] = useState(false);
   useEffect(() => {
