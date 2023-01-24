@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+//import { Home } from "./pages/Home";
+import { Home } from "./pages/Home";
+import { Navbar } from "./components/Navbar";
+import { NewsDetail } from "./pages/NewsDetail";
+import { List } from "./pages/List";
+import { Footer } from "./components/Footer";
+import { ROUTES } from "./constants";
+import { lazy } from "react";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Routes>
+        <Route path={ROUTES.home} element={<Home />} />
+        <Route path={ROUTES.news} element={<NewsDetail />} />
+        <Route path={ROUTES.bookmark} element={<List />} />
+        <Route path={ROUTES.search} element={<List />} />
+        <Route path="*" element={<div>Nothing</div>} />
+      </Routes>
+      <Footer />
     </div>
   );
 }

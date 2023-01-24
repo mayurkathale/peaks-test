@@ -1,0 +1,29 @@
+@import "../styles/variables";
+@import "../styles/global";
+
+.container {
+  .pageHeader {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+
+    .pageHeading {
+      @include pageHeading();
+    }
+    
+    .headerRight {
+      display: flex;
+      flex: 1;
+      justify-content: flex-end;
+      align-items: flex-end;
+      @include respond(tablet) {
+        justify-content: space-between;
+        margin-top: 1rem;
+      }
+    }
+
+    @include respond(tablet) {
+      flex-direction: column;
+    }
+  }
+}

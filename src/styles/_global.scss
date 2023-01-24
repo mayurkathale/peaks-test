@@ -1,0 +1,120 @@
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin container {
+  max-width: 1100px;
+  margin: auto;
+  font-family: $robotoFont;
+  @include respond(desktop) {
+    max-width: 750px;
+  }
+  @include respond(tablet) {
+    max-width: none;
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+  @include respond(mobile) {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+
+@mixin content {
+  margin-top: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+@mixin pageHeading {
+  font-size: 48px;
+  font-weight: 700;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #000000;
+}
+
+@mixin button {
+  background-color: $primaryColor;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  box-shadow: 0px 2px 6px 0px #0000000F;
+  border-radius: 4px;
+  font-family: $robotoFont;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0.30000001192092896px;
+  text-align: left;
+  height: 30px;
+  display: inline-flex;
+  flex-basis: auto;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 12px 4px;
+  gap: 6px;
+  cursor: pointer;
+}
+
+@mixin restrictContentLines($lines) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+}
+
+@mixin animateOpacity {
+  .animateEnter {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  .animateEnterActive {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 1000ms, transform 1000ms;
+  }
+  
+  .animateExit {
+    opacity: 1;
+  }
+  .animateExitActive {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 1000ms, transform 1000ms;
+  }
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint==wide {
+    @media only screen and (max-width: $xl) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==desktop {
+    @media only screen and (max-width: $lg) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==tablet {
+    @media only screen and (max-width: $md) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==mobile {
+    @media only screen and (max-width: $sm) {
+      @content;
+    }
+  }
+}
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}  
+}
+

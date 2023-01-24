@@ -1,0 +1,22 @@
+@mixin notification {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding: 5px 0;
+  text-transform: uppercase;
+  font-size: 12px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.success {
+  background: #388E3C;
+  @include notification();
+}
+
+.error {
+  background: #D32F2F;
+  @include notification();
+}

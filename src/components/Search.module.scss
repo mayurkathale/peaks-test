@@ -1,0 +1,45 @@
+@import "../styles/variables";
+@import "../styles/global";
+
+.searchIcon {
+  width: 17px;
+  padding-bottom: 10px;
+}
+
+.searchContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 90px;
+  border-bottom: 2px solid #fff;
+}
+
+.searchBox {
+  display: flex;
+  background-color: $searchBgColor;
+  border-bottom: 2px solid #fff;
+  justify-content: center;
+  align-items: center;
+  padding: 0.7rem 2.5rem 0.7rem 1.4rem;
+  input {
+    background-color: transparent;
+    border: none;
+    caret-color: #fff;
+    color: #fff;
+    width: 230px;
+    &:focus-visible {
+      outline: none;
+    }
+  }
+  img {
+    padding: 0;
+  }
+}
+
+@include placeholder {
+  color: #7594C6;
+  font-size: 16px;
+}
+
+@include animateOpacity();

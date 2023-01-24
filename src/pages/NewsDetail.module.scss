@@ -1,0 +1,80 @@
+@import "../styles/variables";
+@import "../styles/global";
+
+.notificationBox {
+  position: relative;
+}
+
+.container {
+  @include container();
+  @include content();
+
+  .contentGrid {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-column-gap: 1rem;
+    .date {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      letter-spacing: 0.83px;
+      text-transform: uppercase;
+      color: rgba(0, 0, 0, 0.87);
+      margin-top: 1.6rem;
+    }
+
+    .content {
+      grid-row: 2/3;
+      grid-column: 1/2;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      letter-spacing: 0.1px;
+      text-align: left;
+      overflow: hidden;
+      figure {
+        margin: unset;
+      }
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .image {
+      grid-row: 2/3;
+      margin: 1em 0;
+      font-size: 12px;
+      .imgText {
+        color: rgba(0, 0, 0, 0.87);
+        mix-blend-mode: normal;
+        opacity: 0.5;
+      }
+      img {
+        max-width: 100%;
+      }
+
+      @include respond(tablet) {
+        grid-row: auto;
+        grid-row: 1/2;
+      }
+    }
+
+    .headline {
+      @include pageHeading();
+      margin: 1rem 0;
+      font-size: 34px;
+    }
+    
+    .subheadline {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 20px;
+      line-height: 26px;
+      font-weight: 700;
+    }
+
+    @include respond(tablet) {
+      grid-template-columns: 100%;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+@import "../../styles/variables";
+@import "../../styles/global";
+
+.btn {
+  @include button();
+  margin-right: 2rem;
+}
