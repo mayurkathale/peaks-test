@@ -6,7 +6,6 @@ import { NewsDetail } from "./pages/NewsDetail";
 import { List } from "./pages/List";
 import { Footer } from "./components/Footer";
 import { ROUTES } from "./constants";
-import { lazy } from "react";
 
 function App() {
   return (

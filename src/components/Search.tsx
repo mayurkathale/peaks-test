@@ -18,7 +18,7 @@ export const Search = () => {
         navigate( generatePath(ROUTES.search, {term: searchref.current?.value}))
       }
     }
-  }, [searchref]);
+  }, [searchref, navigate]);
 
   const animateClasses = {
     enter: styles.animateEnter,

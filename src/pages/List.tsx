@@ -10,7 +10,6 @@ import { useCollectParams } from "../hooks/useCollectParams";
 import { LoadingSpinner } from "../components/Ui/LoadingSpinner";
 
 export const List = () => {
-  const news: NewsType[] = useSelector((state: StoreState) => state.news.news);
   const bookmarked: string[] = useSelector(
     (state: StoreState) => state.news.bookmarked
   );
@@ -19,7 +18,7 @@ export const List = () => {
   params = term ? params + "&q=" + term : params;
   params = type ? params + "&ids=" + bookmarked.join() : params;
 
-  const { data, error, loading } = useFetch(API_URL + params);
+  const { data, loading } = useFetch(API_URL + params);
   const content = loading ?
     <LoadingSpinner /> : data.length ? <NewsList news={data} /> : <div><h1>No records founds</h1></div>;
   return (

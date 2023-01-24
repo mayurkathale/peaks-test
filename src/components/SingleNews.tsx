@@ -44,7 +44,7 @@ export const SingleNews = ({ news, image, showContent, heading }: Props) => {
     >
       {image && !news.fields.thumbnail && (
         <div className={styles.placeholder}>
-          <img src={placeholderImg} />
+          <img src={placeholderImg} alt={htmlToString(news.fields.headline)} />
         </div>
       )}
       <div className={styles.content} style={contentStyle}>

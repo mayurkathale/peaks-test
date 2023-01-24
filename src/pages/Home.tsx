@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { PageHeader } from "../components/PageHeader";
 import { SingleNews } from "../components/SingleNews";
-import { API_URL, API_FAKE } from "../constants";
+import { API_URL } from "../constants";
 import { useDispatch, useSelector } from "react-redux";
 import { setNews } from "../store/actions/newsActions";
-import { NewsType, TResponse, StoreState } from "../types";
+import { NewsType, StoreState } from "../types";
 import styles from "./Home.module.scss";
 import { NewsList } from "../components/NewsList";
 import useFetch from "../hooks/useFetch";
@@ -14,7 +14,7 @@ import useWindowDimensions from "../hooks/useWindowDimensions";
 export const Home = () => {
   const sort: string = useSelector((state: StoreState) => state.news.sort);
   const dispatch = useDispatch();
-  const { height, width } = useWindowDimensions();
+  const { width } = useWindowDimensions();
   const prepareParams = (): string => {
     return "&order-by=" + sort;
   };
@@ -34,7 +34,7 @@ export const Home = () => {
   }
   useEffect(() => {
     dispatch(setNews(data));
-  }, []);
+  }, [data, dispatch]);
 
   const content =
     loading && loadingCategory ? (

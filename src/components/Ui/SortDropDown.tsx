@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import Select, { IndicatorSeparatorProps, OnChangeValue } from "react-select";
+import Select, { IndicatorSeparatorProps } from "react-select";
 import { SORTBY } from "../../constants";
 import { setSort } from "../../store/actions/newsActions";
 import { StoreState } from "../../types";
