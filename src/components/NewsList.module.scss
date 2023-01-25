@@ -32,5 +32,9 @@
       grid-row-gap: 1rem;
       margin-top: 1rem;
     }
+
+    @include respond(mobile) {
+      grid-template-columns: 1fr;
+    }
   }
 }
