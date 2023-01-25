@@ -12,6 +12,7 @@ import { LoadingSpinner } from "../components/Ui/LoadingSpinner";
 import Moment from "react-moment";
 import { Notification } from "../components/Ui/Notification";
 import React, { useState } from "react";
+import { htmlToString } from "../utils";
 
 export const NewsDetail = () => {
   const { id } = useParams();
@@ -71,8 +72,8 @@ export const NewsDetail = () => {
           }{" "}
           BST
         </div>
-        <div className={styles.headline}>{singleNews?.fields.headline}</div>
-        <div className={styles.subheadline}>{singleNews?.fields.trailText}</div>
+        <div className={styles.headline}>{htmlToString(singleNews?.fields.headline)}</div>
+        <div className={styles.subheadline}>{htmlToString(singleNews?.fields.trailText)}</div>
       </div>
       <div
         className={styles.content}
@@ -81,7 +82,7 @@ export const NewsDetail = () => {
       {singleNews?.fields.thumbnail && (
         <div className={styles.image}>
           <img src={singleNews?.fields.thumbnail} alt="content" />
-          <div className={styles.imgText}>{singleNews?.fields.byline}</div>
+          <div className={styles.imgText}>{htmlToString(singleNews?.fields.byline)}</div>
         </div>
       )}
     </div>

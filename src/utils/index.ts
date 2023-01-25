@@ -1,5 +1,5 @@
-export const htmlToString = (str: string): string => {
-  return str.replace(/<[^>]+>/g, "");
+export const htmlToString = (str: string | undefined): string => {
+  return str ? str.replace(/<[^>]+>/g, "") : '';
 };
 
 // export const convertDate = (dateIso: string | undefined): string => {
